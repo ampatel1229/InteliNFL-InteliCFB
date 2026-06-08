@@ -88,4 +88,8 @@ This project's `app.py` is a Streamlit script, not a Vercel serverless function.
 
 For college football data, set `CFBD_API_KEY` in your host's secrets/environment variables.
 
+## 💻 Try It Yourself
+
+https://intelinfl-cfb.streamlit.app/
+
 Local Streamlit secrets can go in `.streamlit/secrets.toml`.
