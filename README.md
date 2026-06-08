@@ -67,3 +67,25 @@ export CFBD_API_KEY=your_key
 
 streamlit run app.py
 ```
+
+## 🚢 Deploy
+
+This is a Streamlit app, so deploy it on a host that supports a persistent web process.
+
+Good options:
+
+- Streamlit Community Cloud: set main file to `app.py`
+- Render: use the included `render.yaml`
+- Railway/Fly/Heroku-style hosts: use the included `Procfile`
+
+### Why Vercel Failed
+
+Vercel detected `app.py` as a Python serverless function. Its Python runtime expects a top-level WSGI/ASGI/function entrypoint named `app`, `application`, or `handler`.
+
+This project's `app.py` is a Streamlit script, not a Vercel serverless function. Adding a top-level `app` variable would satisfy Vercel's build check, but it would not run the Streamlit dashboard correctly. Use Streamlit Community Cloud or a server/container host instead.
+
+## 🔐 Secrets
+
+For college football data, set `CFBD_API_KEY` in your host's secrets/environment variables.
+
+Local Streamlit secrets can go in `.streamlit/secrets.toml`.

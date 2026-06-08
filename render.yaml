@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: intelinfl
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.address=0.0.0.0 --server.port=$PORT
+    envVars:
+      - key: CFBD_API_KEY
+        sync: false
